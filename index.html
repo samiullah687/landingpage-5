@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Wow Health Insight</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.webp" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <link href="./assets/styles.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/source-sans-pro@3.6.0/source-sans-pro.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Hero section -->
+    <div class="hero">
+      <div class="container hero_inner">
+        <div class="row">
+          <div class="col-sm-12 site-info block-element-sm-t">
+            <img class="brand-logo" src="./assets/img/site-logo.png" />
+            <div class="call-top d-none">
+              <span class="call-top_text"
+                >Speak with a Licensed Sales Agent</span
+              >
+              <span class="call-top_number">1-888-555-4444</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="page-title block-element-t text--centered">
+              Compare BlueCross BlueShield &amp; Other 2024 Health Plans
+            </h1>
+          </div>
+        </div>
+        <div class="row justify-content-end block-element-lg-t">
+          <div class="col-lg-5">
+            <div class="form-container">
+              <span class="form-title"
+                >What kind of insurance are you looking for?</span
+              >
+              <div class="insurance-type-grid">
+                <div>
+                  <input
+                    class="insurance-type-radio"
+                    type="radio"
+                    name="insurance-type"
+                    id="radio-individual"
+                  />
+                  <label
+                    class="insurance-type-label"
+                    id="label-individual"
+                    for="radio-individual"
+                  >
+                    <div class="insurance-type-label-text">
+                      <img
+                        class="insurance-type-label-icon only-phone"
+                        src="./assets/img/person.svg"
+                        alt="Person icon"
+                      />Individual
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    class="insurance-type-radio"
+                    type="radio"
+                    name="insurance-type"
+                    id="radio-family"
+                  />
+                  <label
+                    class="insurance-type-label"
+                    id="label-family"
+                    for="radio-family"
+                  >
+                    <div class="insurance-type-label-text">
+                      <img
+                        class="insurance-type-label-icon only-phone"
+                        src="./assets/img/group.svg"
+                        alt="Group icon"
+                      />Family
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    class="insurance-type-radio"
+                    type="radio"
+                    name="insurance-type"
+                    id="radio-other"
+                  />
+                  <label
+                    class="insurance-type-label"
+                    id="label-other"
+                    for="radio-other"
+                  >
+                    <div class="insurance-type-label-text">
+                      <img
+                        class="insurance-type-label-icon only-phone"
+                        src="./assets/img/other.svg"
+                        alt="Other icon"
+                      />Other
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <form
+                class="zip-input-form"
+                id="health_zip"
+                method="get"
+                action="/form/?product=health&amp;wizsid=cb1ddce0-e678-11ee-bc08-89a0c3f6f571"
+                onsubmit="return simple.validate();"
+              >
+                <input type="hidden" name="zipDetect" value="true" />
+                <input type="hidden" name="product" value="health" />
+                <input
+                  type="hidden"
+                  name="wizsid"
+                  value="cb1ddce0-e678-11ee-bc08-89a0c3f6f571"
+                />
+                <input
+                  class="zip"
+                  name="zip"
+                  id="zip"
+                  type="hidden"
+                  maxlength="5"
+                  placeholder="Enter Your Zip Code"
+                  value="44000"
+                />
+                <input
+                  id="cta"
+                  class="submit-input"
+                  type="submit"
+                  value="Compare Plans"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="provider-container">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="provider-grid">
+                <a class="provider-link" href="#">
+                  <img
+                    class="provider-logo"
+                    src="./assets/img/1.svg"
+                    alt="Blue Cross Blue Shield"
+                  />
+                </a>
+                <a class="provider-link" href="#">
+                  <img
+                    class="provider-logo"
+                    src="./assets/img/2.svg"
+                    alt="Aetna"
+                  />
+                </a>
+                <a class="provider-link" href="#">
+                  <img
+                    class="provider-logo"
+                    src="./assets/img/3.svg"
+                    alt="Cigna Healthcare"
+                  />
+                </a>
+                <a class="provider-link" href="#">
+                  <img
+                    class="provider-logo"
+                    src="./assets/img/4.svg"
+                    alt="United Healthcare"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plans Section -->
+    <div class="plans-section block-element-lg-b">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="block-element-sm-t block-element-sm-b text--centered">
+              <h2 class="title-basic text--centered">
+                We've Located 50+ Health Plans and Discounts From Top Providers
+                Near You
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="plan-grid">
+          <div class="plan-item">
+            <p class="plan-item-title">BlueCross BlueShield Health Plans</p>
+            <ul class="plan-item-list">
+              <li>Plans in all 50 states</li>
+              <li>Health, Dental and Vision Plans</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">4 HMO Plans</p>
+            <ul class="plan-item-list">
+              <li>Low premiums/copays</li>
+              <li>In network doctors</li>
+              <li>100% of services covered</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">5 PPO Plans</p>
+            <ul class="plan-item-list">
+              <li>Higher out-of-pocket costs</li>
+              <li>Your choice of providers</li>
+              <li>Varying % of services covered</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">11 Bronze Plans</p>
+            <ul class="plan-item-list">
+              <li>Low premiums/copays</li>
+              <li>In network doctors</li>
+              <li>60% of services covered</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">13 Silver Plans</p>
+            <ul class="plan-item-list">
+              <li>Moderate premiums/copays</li>
+              <li>In network doctors</li>
+              <li>70% of services covered</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">8 Gold Plans</p>
+            <ul class="plan-item-list">
+              <li>Higher premiums/copays</li>
+              <li>In network doctors</li>
+              <li>80% of services covered</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">5 Short Term Plans</p>
+            <ul class="plan-item-list">
+              <li>Low monthly rates</li>
+              <li>No enrollment period</li>
+              <li>Next day coverage</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+          <div class="plan-item">
+            <p class="plan-item-title">7 Medicare Plans</p>
+            <ul class="plan-item-list">
+              <li>Low premiums/copays</li>
+              <li>Keep your doctor/s</li>
+              <li>Supplement Medicare costs</li>
+            </ul>
+            <p class="plan-item-link text--centered">
+              <a href="#">Get Pricing Now</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main block-element-lg-b">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="about-company">
+              <h2 class="title-basic">
+                <em>Pick Health Insurance</em> Makes it Easy To Save
+              </h2>
+              <ul class="list-arrows">
+                <li>Getting started takes less than 5 minutes</li>
+                <li>
+                  Our expert advisors will help you pick the right coverage
+                </li>
+                <li>Compare plans to find your lowest rates</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="coverage-options">
+              <h2 class="title-basic text--centered">
+                What type of coverage you are looking for?
+              </h2>
+              <a href="#" class="btn-outline btn-stacked"
+                >The most comprehensive coverage</a
+              >
+              <a href="#" class="btn-outline btn-stacked"
+                >A plan with specific benefits</a
+              >
+              <a href="#" class="btn-outline btn-stacked"
+                >Help me decide on the right plan</a
+              >
+              <a href="#" class="btn-outline btn-stacked"
+                >I know which plan I want</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-id">MULTIPLAN_QW.PH.WEB_M</div>
+      <div class="footer block-element-sm-b">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="licenses-disclaimer">
+                You are visiting a website owned by QuoteWizard.com, LLC
+                (“QuoteWizard”), a subsidiary of LendingTree, LLC. Invitations
+                for application for insurance may be made through QW Insurance
+                Solutions, LLC (“QWIS”), a subsidiary of QuoteWizard, or through
+                its designated agents, only where licensed and appointed.
+                Licensing information for QWIS can be found
+                <a href="/licenses">here</a>.
+              </p>
+              <div class="subactions">
+                <a class="subactions_link" target="_blank" href="#"
+                  >Contact Us</a
+                >
+                <a class="subactions_link" target="_blank" href="#"
+                  >Privacy Policy</a
+                >
+                <a class="subactions_link" target="_blank" href="#"
+                  >Terms of Use</a
+                >
+                <a class="subactions_link" target="_blank" href="#"
+                  >Online Tracking</a
+                >
+                <a class="subactions_link" target="_blank" href="/licenses"
+                  >Licenses</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
